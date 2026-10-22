@@ -50,7 +50,7 @@ img{display:block;max-width:100%}
 
 /* ---------- secciones y fundidos ---------- */
 .sec{position:relative;isolation:isolate;padding:clamp(120px,16vh,190px) clamp(20px,5vw,64px);text-align:center;overflow:hidden}
-.sec-in{position:relative;z-index:3;max-width:680px;margin:0 auto}
+.sec-in{position:relative;z-index:5;max-width:680px;margin:0 auto}
 /* el fundido inferior pinta el color de la sección siguiente con curva suave */
 .sec::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:var(--fade);z-index:2;pointer-events:none;
   background:linear-gradient(to bottom,
@@ -264,7 +264,7 @@ footer{background:var(--night)}
 
 
 /* ---------- lluvia de sobres ---------- */
-.rain{position:absolute;inset:0;z-index:4;pointer-events:none;overflow:hidden;
+.rain{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;
   -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 18%,#000 82%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 18%,#000 82%,transparent 100%)}
 .drop{position:absolute;top:-14%;left:var(--x);width:var(--w);animation:fall var(--t) linear infinite;animation-delay:var(--dl);perspective:500px}
 .drop .sway{animation:sway calc(var(--t) / 3) ease-in-out infinite alternate;animation-delay:var(--dl)}
