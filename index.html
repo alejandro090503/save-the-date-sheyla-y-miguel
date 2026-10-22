@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Save the Date · Miguel Ángel &amp; Sheyla · 19 Diciembre 2026</title>
+<meta name="description" content="Aparta la fecha: Miguel Ángel &amp; Sheyla se casan el sábado 19 de diciembre de 2026 en Playa del Carmen, Quintana Roo.">
+<meta name="theme-color" content="#0b1a44">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://save-the-date-sheyla-y-miguel.vercel.app/">
+<meta property="og:title" content="Save the Date · Miguel Ángel &amp; Sheyla">
+<meta property="og:description" content="Sábado 19 de diciembre de 2026 · Playa del Carmen">
+<meta property="og:image" content="https://save-the-date-sheyla-y-miguel.vercel.app/og-image.jpg">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Italiana&family=Inter+Tight:wght@500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b1a44; --navy-2:#132a6b; --sapphire:#1E3A8A; --sapphire-lt:#3557b7;
+  --silver:#C0C0C0; --silver-lt:#eef0f3; --silver-dk:#7d838c;
+  --paper:#ffffff; --mist:#f3f6fb; --ink:#121a31; --ink-soft:#3e4a68;
+  --display:'Playfair Display',Georgia,serif; --serif:'Cormorant Garamond',Georgia,serif;
+  --italiana:'Italiana',serif; --sans:'Inter Tight',system-ui,sans-serif;
+  --silver-grad:linear-gradient(100deg,#7d838c 0%,#c0c0c0 20%,#ffffff 42%,#c0c0c0 58%,#8a9099 78%,#d9dce1 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;background:var(--navy)}
+body{font-family:var(--serif);font-weight:500;font-size:18px;line-height:1.6;color:var(--ink);background:var(--paper);overflow-x:hidden}
+body.locked{overflow:hidden;height:100vh}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* ===== plata metálica ===== */
+.silver{background:var(--silver-grad);background-size:250% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--silver);animation:sweep 7s linear infinite}
+@keyframes sweep{to{background-position:250% center}}
+.shine{position:relative;overflow:hidden}
+.shine::after{content:"";position:absolute;inset:-20%;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);transform:translateX(-120%);animation:glint 5.5s ease-in-out infinite;pointer-events:none}
+@keyframes glint{0%,55%{transform:translateX(-120%)}80%,100%{transform:translateX(120%)}}
+
+/* ===== fondo zafiro difuminado ===== */
+.mesh{position:absolute;inset:0;overflow:hidden;z-index:0;background:radial-gradient(120% 90% at 50% 0%,var(--navy-2) 0%,var(--navy) 60%,#060f2b 100%)}
+.mesh i{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;mix-blend-mode:screen;will-change:transform}
+.mesh i:nth-child(1){width:70vmax;height:70vmax;left:-25vmax;top:-20vmax;background:radial-gradient(circle,#2f55c4 0%,transparent 65%);animation:float1 18s ease-in-out infinite alternate}
+.mesh i:nth-child(2){width:60vmax;height:60vmax;right:-25vmax;top:20%;background:radial-gradient(circle,#1E3A8A 0%,transparent 65%);animation:float2 22s ease-in-out infinite alternate}
+.mesh i:nth-child(3){width:45vmax;height:45vmax;left:20%;bottom:-20vmax;background:radial-gradient(circle,rgba(192,192,192,.55) 0%,transparent 65%);animation:float1 26s ease-in-out infinite alternate-reverse}
+@keyframes float1{to{transform:translate(12vmax,8vmax) scale(1.15)}}
+@keyframes float2{to{transform:translate(-10vmax,-6vmax) scale(1.1)}}
+#sparks{position:fixed;inset:0;pointer-events:none;z-index:3}
+
+/* ===== sobre ===== */
+#sobre{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;cursor:pointer;transition:opacity 1s ease,visibility 1s}
+#sobre.out{opacity:0;visibility:hidden}
+.env{position:relative;z-index:2;width:min(340px,82vw);aspect-ratio:1.45;perspective:1200px}
+.env-back,.env-front,.env-flap{position:absolute;inset:0}
+.env-back{background:linear-gradient(160deg,#ffffff,#e6eaf2);border-radius:6px;box-shadow:0 30px 70px -20px rgba(0,0,0,.6)}
+.env-letter{position:absolute;left:7%;right:7%;top:10%;bottom:8%;background:#fff;border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:var(--italiana);letter-spacing:.35em;font-size:13px;color:var(--sapphire);transition:transform 1.2s cubic-bezier(.2,.8,.2,1) .5s;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.env-front{background:linear-gradient(200deg,#f6f8fc,#dfe4ee);clip-path:polygon(0 30%,50% 72%,100% 30%,100% 100%,0 100%);border-radius:0 0 6px 6px;z-index:3}
+.env-flap{z-index:4;transform-origin:50% 0;transition:transform 1s cubic-bezier(.6,0,.3,1);transform-style:preserve-3d}
+.env-flap::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#ffffff,#d3d9e5);clip-path:polygon(0 0,100% 0,50% 70%);filter:drop-shadow(0 4px 6px rgba(0,0,0,.15))}
+.seal{position:absolute;z-index:5;left:50%;top:62%;width:86px;height:86px;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#4a6fd6 0%,#1E3A8A 45%,#0d1f55 100%);box-shadow:0 6px 18px rgba(0,0,0,.4),inset 0 -6px 12px rgba(0,0,0,.35),inset 0 4px 8px rgba(255,255,255,.25);
+  display:flex;align-items:center;justify-content:center;transition:transform .7s ease,opacity .6s ease}
+.seal::before{content:"";position:absolute;inset:8px;border-radius:50%;border:1.5px solid rgba(220,224,230,.7)}
+.seal span{font-family:var(--display);font-style:italic;font-size:28px;font-weight:600}
+#sobre.open .env-flap{transform:rotateX(180deg)}
+#sobre.open .seal{transform:translate(-50%,-50%) scale(.4);opacity:0}
+#sobre.open .env-letter{transform:translateY(-62%)}
+.sobre-hint{position:relative;z-index:2;font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.4em;text-transform:uppercase;color:#e6ebf5;padding-left:.4em;animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.45}}
+
+/* ===== portada ===== */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#f4f6fb;overflow:hidden;padding:80px 22px}
+.hero-in{position:relative;z-index:2;max-width:760px}
+.frame{position:absolute;inset:18px;border:1px solid rgba(220,224,230,.35);z-index:1;pointer-events:none}
+.frame::before{content:"";position:absolute;inset:7px;border:1px solid rgba(220,224,230,.18)}
+.lbl{font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.42em;text-transform:uppercase;padding-left:.42em}
+.hero .lbl{color:#dfe5f2}
+.mono{width:120px;height:120px;margin:26px auto;position:relative}
+.mono svg{width:100%;height:100%;overflow:visible}
+.mono .ring{stroke-dasharray:380;stroke-dashoffset:380}
+.go .mono .ring{animation:draw 2.4s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.mono b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-style:italic;font-size:40px;font-weight:600}
+.names{font-family:var(--display);font-weight:500;font-size:clamp(48px,13vw,112px);line-height:1.02;letter-spacing:-.01em}
+.names .and{display:block;font-family:var(--italiana);font-size:.42em;margin:.18em 0}
+.names .w{display:inline-block}
+.names .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(6deg);filter:blur(8px)}
+.go .names .ch{animation:chIn 1.1s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes chIn{to{opacity:1;transform:none;filter:blur(0)}}
+.hero-date{margin-top:30px;font-family:var(--sans);font-weight:600;font-size:clamp(17px,4.6vw,24px);letter-spacing:.32em;padding-left:.32em}
+.hero-date i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--silver);margin:0 .7em;vertical-align:middle}
+.hero-place{margin-top:14px;font-family:var(--serif);font-style:italic;font-size:21px;color:#dfe5f2}
+.fade{opacity:0;transform:translateY(18px);transition:opacity 1.2s ease,transform 1.2s ease}
+.go .fade{opacity:1;transform:none}
+.go .d1{transition-delay:.3s}.go .d2{transition-delay:1.6s}.go .d3{transition-delay:2s}.go .d4{transition-delay:2.4s}.go .d5{transition-delay:3s}
+.down{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;width:1px;height:54px;background:linear-gradient(transparent,#dfe5f2);animation:drop 2s ease-in-out infinite}
+@keyframes drop{0%{transform:translateX(-50%) scaleY(0);transform-origin:top}50%{transform:translateX(-50%) scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:translateX(-50%) scaleY(0);transform-origin:bottom}}
+
+/* ===== secciones ===== */
+.sec{position:relative;padding:110px 22px;text-align:center;overflow:hidden}
+.sec-in{position:relative;z-index:2;max-width:620px;margin:0 auto}
+.sec.light{background:radial-gradient(90% 60% at 50% 0%,#e9eef8 0%,#ffffff 70%)}
+.sec h2{font-family:var(--display);font-weight:500;font-size:clamp(34px,8.5vw,56px);line-height:1.2;color:var(--sapphire);margin:16px 0 22px}
+.sec h2 em{font-style:italic}
+.sec p{font-size:clamp(19px,4.8vw,22px);line-height:1.65;color:var(--ink)}
+.sec .lbl{color:var(--silver-dk)}
+.rule{display:flex;align-items:center;justify-content:center;gap:14px;margin:34px auto}
+.rule::before,.rule::after{content:"";height:1px;width:min(110px,26vw);background:linear-gradient(90deg,transparent,var(--silver-dk))}
+.rule::after{transform:scaleX(-1)}
+.rule b{width:9px;height:9px;transform:rotate(45deg);background:var(--silver-grad);background-size:250%;animation:sweep 6s linear infinite}
+.big-q{font-family:var(--display);font-style:italic;font-size:clamp(28px,7.4vw,44px);line-height:1.3;color:var(--sapphire);font-weight:500}
+
+/* reveal: visible por defecto; JS solo lo anima */
+.js .rv{opacity:0;transform:translateY(34px) scale(.98);transition:opacity 1.1s cubic-bezier(.2,.8,.2,1),transform 1.1s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+
+/* calendario */
+.cal{max-width:380px;margin:10px auto 0;background:#fff;border:1px solid #d9dee8;box-shadow:0 30px 70px -30px rgba(30,58,138,.45);border-radius:4px;overflow:hidden}
+.cal-top{background:linear-gradient(135deg,var(--sapphire-lt),var(--sapphire) 50%,var(--navy));color:#fff;padding:20px 10px;font-family:var(--display);font-style:italic;font-size:32px;font-weight:500}
+.cal-top small{display:block;font-family:var(--sans);font-style:normal;font-weight:600;font-size:13px;letter-spacing:.4em;padding-left:.4em;margin-top:4px;color:#dfe5f2}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;padding:18px 14px 22px}
+.grid span{height:40px;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:500;font-size:16px;color:var(--ink)}
+.grid .h{font-weight:600;font-size:13px;color:var(--silver-dk);height:28px}
+.grid .day{position:relative;color:#fff;font-weight:600;z-index:1}
+.grid .day::before{content:"";position:absolute;width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#4a6fd6,#1E3A8A 60%,#0d1f55);z-index:-1;box-shadow:0 0 0 0 rgba(53,87,183,.55);animation:beat 2s ease-out infinite}
+.grid .day::after{content:"";position:absolute;width:52px;height:52px;border-radius:50%;border:1.5px solid var(--silver);z-index:-1;animation:spin 9s linear infinite;border-top-color:transparent}
+@keyframes beat{0%{box-shadow:0 0 0 0 rgba(53,87,183,.5)}80%,100%{box-shadow:0 0 0 16px rgba(53,87,183,0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cal-city{margin-top:28px}
+.cal-city b{display:block;font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:.28em;text-transform:uppercase;color:var(--sapphire);padding-left:.28em;margin-bottom:6px}
+
+/* countdown */
+.ticket{margin:44px auto 0;max-width:420px;padding:26px 16px 22px;background:linear-gradient(150deg,var(--navy-2),var(--navy));color:#fff;border-radius:4px;box-shadow:0 30px 60px -30px rgba(11,26,68,.8)}
+.ticket .lbl{color:#dfe5f2}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);margin-top:14px}
+.cd div{border-left:1px solid rgba(220,224,230,.25)}
+.cd div:first-child{border:0}
+.cd b{display:block;font-family:var(--display);font-weight:500;font-size:clamp(32px,9vw,44px);line-height:1.1;font-variant-numeric:tabular-nums}
+.cd span{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#cfd7e8}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:34px;min-height:54px;padding:16px 30px;border:1.5px solid var(--sapphire);color:var(--sapphire);font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;transition:background .35s,color .35s}
+.btn:hover{background:var(--sapphire);color:#fff}
+
+/* destino */
+.dest{color:#f4f6fb}
+.dest h2{color:#fff}
+.dest p{color:#e3e8f3}
+.dest .lbl{color:#cfd7e8}
+.waves{position:absolute;left:0;right:0;bottom:0;height:120px;z-index:1;opacity:.5}
+.waves path{animation:wave 9s ease-in-out infinite alternate}
+.waves path:nth-child(2){animation-duration:12s;animation-direction:alternate-reverse}
+@keyframes wave{to{transform:translateX(-60px)}}
+.pin{width:58px;height:58px;margin:0 auto 6px;color:var(--silver)}
+
+/* pronto */
+.soon .env-mini{width:74px;margin:0 auto 10px;color:var(--sapphire)}
+
+footer{position:relative;padding:70px 22px 54px;text-align:center;color:#e3e8f3;overflow:hidden}
+footer .foot-mono{position:relative;z-index:2;font-family:var(--display);font-style:italic;font-size:46px;font-weight:600}
+footer .when{position:relative;z-index:2;font-family:var(--sans);font-weight:600;letter-spacing:.4em;padding-left:.4em;font-size:15px;margin-top:8px}
+footer .credit{position:relative;z-index:2;margin-top:34px;font-family:var(--sans);font-size:14px;font-weight:500;color:#cfd7e8}
+footer .credit a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+
+#music-btn{position:fixed;right:16px;bottom:16px;z-index:40;width:50px;height:50px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);background:rgba(30,58,138,.88);display:none;align-items:center;justify-content:center;gap:3px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+#music-btn.show{display:flex}
+#music-btn i{width:3px;height:16px;background:#fff;border-radius:2px;transform-origin:bottom;animation:eq 1s ease-in-out infinite}
+#music-btn i:nth-child(2){animation-delay:.2s}#music-btn i:nth-child(3){animation-delay:.4s}#music-btn i:nth-child(4){animation-delay:.1s}
+#music-btn.paused i{animation:none;transform:scaleY(.35)}
+@keyframes eq{50%{transform:scaleY(.3)}}
+
+@media (min-width:900px){.sec{padding:150px 40px}.frame{inset:30px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.names .ch,.fade,.js .rv{opacity:1!important;transform:none!important;filter:none!important}}
+</style>
+</head>
+<body class="locked">
+<script>document.documentElement.classList.add('js')</script>
+<canvas id="sparks" aria-hidden="true"></canvas>
+
+<!-- SOBRE -->
+<div id="sobre" role="button" tabindex="0" aria-label="Toca para abrir">
+  <div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="env" aria-hidden="true">
+    <div class="env-back"></div>
+    <div class="env-letter">SAVE THE DATE</div>
+    <div class="env-front"></div>
+    <div class="env-flap"></div>
+    <div class="seal"><span class="silver">M&amp;S</span></div>
+  </div>
+  <p class="sobre-hint">Toca para abrir</p>
+</div>
+
+<!-- PORTADA -->
+<header class="hero" id="hero">
+  <div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="frame" aria-hidden="true"></div>
+  <div class="hero-in">
+    <p class="lbl fade d1">Save the date</p>
+    <div class="mono fade d1" aria-hidden="true">
+      <svg viewBox="0 0 120 120"><defs><linearGradient id="sg" x1="0" x2="1"><stop offset="0" stop-color="#8a9099"/><stop offset=".45" stop-color="#ffffff"/><stop offset="1" stop-color="#a8adb6"/></linearGradient></defs>
+        <circle class="ring" cx="60" cy="60" r="56" fill="none" stroke="url(#sg)" stroke-width="1.4"/>
+        <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(220,224,230,.35)" stroke-width=".8"/></svg>
+      <b class="silver">M&amp;S</b>
+    </div>
+    <h1 class="names" aria-label="Miguel Ángel y Sheyla">
+      <span class="w" data-split>Miguel Ángel</span>
+      <span class="and silver">&amp;</span>
+      <span class="w" data-split>Sheyla</span>
+    </h1>
+    <p class="hero-date fade d3">19<i></i>12<i></i>2026</p>
+    <p class="hero-place fade d4">Playa del Carmen, Quintana Roo</p>
+  </div>
+  <div class="down fade d5" aria-hidden="true"></div>
+</header>
+
+<main>
+  <!-- NOS CASAMOS -->
+  <section class="sec light">
+    <div class="sec-in">
+      <p class="lbl rv">Una noticia especial</p>
+      <h2 class="rv">¡Nos <em>casamos</em>!</h2>
+      <p class="rv">Con mucha ilusión queremos compartir contigo que hemos decidido unir nuestras vidas, y no imaginamos ese día sin las personas que más queremos.</p>
+      <div class="rule rv" aria-hidden="true"><b></b></div>
+      <p class="big-q rv">Guarda esta fecha<br>para celebrar con nosotros.</p>
+    </div>
+  </section>
+
+  <!-- CALENDARIO -->
+  <section class="sec" style="background:var(--mist)">
+    <div class="sec-in">
+      <p class="lbl rv">Aparta la fecha</p>
+      <h2 class="rv">Márcalo en tu <em>calendario</em></h2>
+      <div class="cal rv">
+        <div class="cal-top shine">Diciembre<small>2026</small></div>
+        <div class="grid">
+          <span class="h">L</span><span class="h">M</span><span class="h">M</span><span class="h">J</span><span class="h">V</span><span class="h">S</span><span class="h">D</span>
+          <span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+          <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
+          <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span class="day">19</span><span>20</span>
+          <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
+          <span>28</span><span>29</span><span>30</span><span>31</span>
+        </div>
+      </div>
+      <p class="cal-city rv"><b>Sábado 19 de diciembre de 2026</b>Playa del Carmen, Quintana Roo</p>
+      <div class="ticket shine rv">
+        <p class="lbl">Faltan</p>
+        <div class="cd">
+          <div><b id="cd-d">—</b><span>Días</span></div>
+          <div><b id="cd-h">—</b><span>Horas</span></div>
+          <div><b id="cd-m">—</b><span>Min</span></div>
+          <div><b id="cd-s">—</b><span>Seg</span></div>
+        </div>
+      </div>
+      <a class="btn rv" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Miguel+%C3%81ngel+%26+Sheyla&dates=20261220T000000Z/20261220T060000Z&location=Playa+del+Carmen,+Quintana+Roo">Agregar a mi calendario</a>
+    </div>
+  </section>
+
+  <!-- DESTINO -->
+  <section class="sec dest">
+    <div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
+    <svg class="waves" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 60 Q180 20 360 60 T720 60 T1080 60 T1440 60 T1800 60 V120 H0Z" fill="rgba(192,192,192,.18)"/>
+      <path d="M0 80 Q180 50 360 80 T720 80 T1080 80 T1440 80 T1800 80 V120 H0Z" fill="rgba(255,255,255,.12)"/>
+    </svg>
+    <div class="sec-in">
+      <svg class="pin rv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+      <p class="lbl rv">Nuestro destino</p>
+      <h2 class="rv">Playa del <em>Carmen</em></h2>
+      <p class="rv">Celebraremos frente al Caribe mexicano, en Quintana Roo. Si vienes de fuera, te recomendamos ir planeando tu viaje con tiempo.</p>
+      <div class="rule rv" aria-hidden="true"><b></b></div>
+      <p class="lbl rv" style="color:#fff">Código de vestimenta · Formal</p>
+    </div>
+  </section>
+
+  <!-- MUY PRONTO -->
+  <section class="sec light soon">
+    <div class="sec-in">
+      <svg class="env-mini rv" viewBox="0 0 64 44" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="2" width="60" height="40" rx="2"/><path d="M2 4l30 22L62 4"/></svg>
+      <p class="lbl rv">Muy pronto</p>
+      <h2 class="rv">La invitación llegará <em>a tus manos</em></h2>
+      <p class="rv">Recibirás todos los detalles: el lugar, los horarios y la confirmación de tu asistencia. Por ahora, solo guarda este día para nosotros.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
+  <p class="foot-mono silver">M &amp; S</p>
+  <p class="when">19 · 12 · 2026</p>
+  <p class="credit">Invitación digital por <a href="https://www.instagram.com/elysium.invitaciones/" target="_blank" rel="noopener">@elysium.invitaciones</a></p>
+</footer>
+
+<audio id="music" src="music.mp3" loop preload="auto" playsinline></audio>
+<button id="music-btn" type="button" aria-label="Pausar música"><i></i><i></i><i></i><i></i></button>
+
+<script>
+(function(){
+  // letras de los nombres
+  var delay = 0.7;
+  document.querySelectorAll('[data-split]').forEach(function(el){
+    var t = el.textContent; el.textContent = '';
+    for (var i=0;i<t.length;i++){
+      var c = document.createElement('span'); c.className = 'ch';
+      c.textContent = t[i] === ' ' ? ' ' : t[i];
+      c.style.animationDelay = (delay += 0.06).toFixed(2) + 's';
+      el.appendChild(c);
+    }
+    delay += 0.25;
+  });
+
+  // sobre + música (el toque desbloquea el audio)
+  var sobre = document.getElementById('sobre'), music = document.getElementById('music'), mbtn = document.getElementById('music-btn');
+  var opened = false;
+  function abrir(){
+    if (opened) return; opened = true;
+    try { music.volume = .7; var p = music.play(); if (p && p.catch) p.catch(function(){ mbtn.classList.add('paused'); }); } catch(e){}
+    sobre.classList.add('open');
+    setTimeout(function(){
+      sobre.classList.add('out');
+      document.body.classList.remove('locked');
+      document.getElementById('hero').classList.add('go');
+      mbtn.classList.add('show');
+    }, 1700);
+    setTimeout(function(){ sobre.style.display = 'none'; }, 2800);
+  }
+  sobre.addEventListener('click', abrir);
+  sobre.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(); } });
+  mbtn.addEventListener('click', function(){
+    if (music.paused) { music.play(); mbtn.classList.remove('paused'); mbtn.setAttribute('aria-label','Pausar música'); }
+    else { music.pause(); mbtn.classList.add('paused'); mbtn.setAttribute('aria-label','Reproducir música'); }
+  });
+
+  // reveals (si el observer no existe, todo queda visible)
+  var rv = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+
+  // cuenta regresiva (Quintana Roo = UTC-5)
+  var target = new Date('2026-12-19T19:00:00-05:00').getTime();
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  function tick(){
+    var d = Math.max(0, target - Date.now());
+    document.getElementById('cd-d').textContent = Math.floor(d / 864e5);
+    document.getElementById('cd-h').textContent = pad(Math.floor(d / 36e5) % 24);
+    document.getElementById('cd-m').textContent = pad(Math.floor(d / 6e4) % 60);
+    document.getElementById('cd-s').textContent = pad(Math.floor(d / 1e3) % 60);
+  }
+  tick(); setInterval(tick, 1000);
+
+  // destellos plateados
+  var cv = document.getElementById('sparks'), ctx = cv.getContext('2d'), W, H, dpr = Math.min(window.devicePixelRatio || 1, 2), pts = [];
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function size(){ W = cv.width = innerWidth * dpr; H = cv.height = innerHeight * dpr; cv.style.width = innerWidth + 'px'; cv.style.height = innerHeight + 'px'; }
+  size(); addEventListener('resize', size);
+  var N = innerWidth < 600 ? 28 : 46;
+  for (var i=0;i<N;i++) pts.push({ x: Math.random(), y: Math.random(), r: .6 + Math.random() * 1.8, s: .00008 + Math.random() * .00022, ph: Math.random() * 6.28, star: Math.random() < .22 });
+  function frame(t){
+    ctx.clearRect(0,0,W,H);
+    for (var i=0;i<pts.length;i++){
+      var p = pts[i]; p.y -= p.s; if (p.y < -.02) { p.y = 1.02; p.x = Math.random(); }
+      var a = .25 + .75 * Math.abs(Math.sin(t / 900 + p.ph)), x = p.x * W, y = p.y * H, r = p.r * dpr;
+      ctx.globalAlpha = a * .85;
+      if (p.star) {
+        ctx.fillStyle = '#e8ecf3'; ctx.beginPath();
+        var R = r * 3.4; ctx.moveTo(x, y - R); ctx.quadraticCurveTo(x, y, x + R, y); ctx.quadraticCurveTo(x, y, x, y + R); ctx.quadraticCurveTo(x, y, x - R, y); ctx.quadraticCurveTo(x, y, x, y - R); ctx.fill();
+      } else {
+        var g = ctx.createRadialGradient(x, y, 0, x, y, r * 3); g.addColorStop(0, 'rgba(235,240,250,1)'); g.addColorStop(1, 'rgba(160,180,230,0)');
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r * 3, 0, 6.283); ctx.fill();
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
