@@ -13,6 +13,7 @@
 <meta property="og:image" content="https://save-the-date-sheyla-y-miguel.vercel.app/og-image.jpg">
 <meta property="og:locale" content="es_MX">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png">
 <link rel="preload" as="image" href="ink-lavanda.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,6 +143,7 @@ footer{background:var(--night)}
 .names .row{display:block;white-space:nowrap}
 .names .and{display:block;font-family:var(--caps);font-style:normal;font-weight:500;font-size:clamp(16px,1.4vw + 10px,26px);letter-spacing:.6em;padding-left:.6em;margin:.5em 0 .35em;color:#cbbfe0;opacity:0;transition:opacity 1.5s ease 2.1s}
 .go .names .and{opacity:1}
+.names .ch{-webkit-text-fill-color:#efe7f8;color:#efe7f8;text-shadow:0 0 30px rgba(183,155,208,.45)}
 .ch{display:inline-block;opacity:0;transform:translate3d(0,.55em,0) rotate(5deg);filter:blur(10px)}
 .go .ch{animation:chIn 1.3s var(--ease) forwards}
 @keyframes chIn{to{opacity:1;transform:none;filter:blur(0)}}
@@ -434,7 +436,7 @@ footer .credit a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(25
   /* nombres letra por letra */
   var delay = .8;
   document.querySelectorAll('[data-split]').forEach(function(el){
-    var t = el.textContent; el.textContent = '';
+    var t = el.textContent; el.dataset.full = t; el.textContent = '';
     for (var i = 0; i < t.length; i++){
       var c = document.createElement('span'); c.className = 'ch';
       c.textContent = t[i] === ' ' ? ' ' : t[i];
@@ -456,6 +458,7 @@ footer .credit a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(25
       sobre.classList.add('out');
       document.body.classList.remove('locked');
       document.getElementById('hero').classList.add('go');
+      setTimeout(function(){ document.querySelectorAll('[data-split]').forEach(function(el){ el.textContent = el.dataset.full; }); }, (delay + 1.6) * 1000);
       vinyl.classList.add('show');
     }, 1800);
     setTimeout(function(){ sobre.style.display = 'none'; }, 3000);
