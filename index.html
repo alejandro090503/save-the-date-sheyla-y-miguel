@@ -60,7 +60,7 @@ img{display:block;max-width:100%}
     rgb(var(--next)/.896) 77.5%,rgb(var(--next)/.951) 84.5%,rgb(var(--next)/.987) 91.9%,rgb(var(--next)/1) 100%)}
 .sec.last::after{display:none}
 /* las texturas nacen y mueren difuminadas, nunca con borde */
-.tex{position:absolute;inset:-12% 0;z-index:0;background-size:cover;background-position:center;pointer-events:none;
+.tex{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;pointer-events:none;
   -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 30%,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 30%,#000 70%,transparent 100%);will-change:transform}
 
 .light h2,.light .h2{color:var(--plum-2)}
@@ -165,11 +165,11 @@ footer{background:var(--night)}
 /* ---------- 1 · nos casamos (óvalo) ---------- */
 .s-love{background:var(--light-1)}
 .oval-wrap{position:relative;width:min(560px,100%);margin:0 auto;aspect-ratio:768/1376;max-height:none}
-.oval-bg{position:absolute;inset:0;background:url('ink-marco-morado.jpg') center/100% 100% no-repeat;border-radius:4px;filter:drop-shadow(0 30px 50px rgba(94,58,99,.22))}
-.oval-in{position:absolute;inset:14% 15% 13%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.oval-bg{position:absolute;inset:0;background:url('ink-marco-morado.jpg') center/100% 100% no-repeat;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 72%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 72%,transparent 100%)}
+.oval-in{position:absolute;inset:15% 18% 14%;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .oval-in h2{font-size:clamp(38px,6.5vw,64px);margin:12px 0 14px}
 .oval-in p{font-size:clamp(17px,.7vw + 14px,21px);line-height:1.6;max-width:30ch}
-.oval-in .quote{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(21px,1.3vw + 15px,30px);line-height:1.35;color:var(--plum-2);margin-top:6px}
+.oval-in .quote{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(19px,1vw + 14px,27px);line-height:1.35;color:var(--plum-2);margin-top:6px}
 
 /* ---------- 2 · calendario ---------- */
 .s-cal{background:var(--light-2)}
@@ -222,7 +222,7 @@ footer{background:var(--night)}
 /* ---------- 4 · muy pronto ---------- */
 .s-soon{background:var(--light-1)}
 .soon-card{position:relative;max-width:600px;margin:0 auto;padding:clamp(64px,10vw,96px) clamp(26px,6vw,64px);}
-.soon-card::before{content:"";position:absolute;inset:0;background:url('ink-ovalo-azul.jpg') center/100% 100% no-repeat;z-index:-1;filter:drop-shadow(0 30px 50px rgba(43,74,154,.2))}
+.soon-card::before{content:"";position:absolute;inset:0;background:url('ink-ovalo-azul.jpg') center/100% 100% no-repeat;z-index:-1;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 72%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 72%,transparent 100%)}
 .mini-env{width:clamp(70px,10vw,90px);margin:0 auto 14px;color:var(--plum-2)}
 .mini-env .flap{transform-origin:50% 4px;animation:flap 4.5s ease-in-out infinite}
 @keyframes flap{0%,60%,100%{transform:scaleY(1)}75%{transform:scaleY(-1)}}
@@ -296,7 +296,8 @@ footer .credit a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(25
 }
 @media (max-width:420px){
   .names{font-size:clamp(50px,15vw,64px)}
-  .oval-in{inset:13% 13% 12%}
+  .oval-in{inset:15% 15% 13%}
+  .oval-in p{font-size:17px}
 }
 @media (max-height:640px) and (orientation:landscape){
   .names{font-size:clamp(44px,8vw,80px);margin:16px 0}
