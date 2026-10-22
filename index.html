@@ -175,12 +175,9 @@ footer{background:var(--night)}
 @keyframes cueGrad{50%{background-position:100% 100%}}
 @keyframes wheel{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
 
-/* halo detrás de los textos sobre las tintas */
-.light .sec-in p:not(.caps),.light .sec-in h2,.light .sec-in .caps,.light .cal-side .when,.light .cal-side .city{position:relative;isolation:isolate}
-.light .sec-in p:not(.caps)::before,.light .sec-in h2::before,.light .sec-in .caps::before,.light .cal-side .when::before,.light .cal-side .city::before{
-  content:"";position:absolute;inset:-14px -22px;z-index:-1;border-radius:50%;pointer-events:none;
-  background:radial-gradient(ellipse at center,rgba(255,250,255,.92) 0%,rgba(250,240,252,.75) 40%,rgba(245,232,250,.35) 65%,rgba(245,232,250,0) 78%);filter:blur(6px)}
-.light .sec-in p:not(.caps){text-shadow:0 0 12px rgba(255,255,255,.9)}
+/* halo detrás de los textos sobre las tintas (resplandor sin cajas) */
+.light .sec-in p,.light .sec-in h2,.light .cal-side .when,.light .cal-side .city{text-shadow:0 0 10px rgba(255,251,255,.95),0 0 22px rgba(252,244,253,.9),0 0 44px rgba(248,236,251,.85),0 0 70px rgba(246,232,250,.7)}
+.light .sec-in .caps{text-shadow:0 0 8px #fff,0 0 20px rgba(252,244,253,.95),0 0 40px rgba(248,236,251,.8)}
 
 /* ---------- 1 · nos casamos (óvalo) ---------- */
 .s-love{background:var(--light-1)}
