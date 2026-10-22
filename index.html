@@ -60,8 +60,8 @@ img{display:block;max-width:100%}
     rgb(var(--next)/.896) 77.5%,rgb(var(--next)/.951) 84.5%,rgb(var(--next)/.987) 91.9%,rgb(var(--next)/1) 100%)}
 .sec.last::after{display:none}
 /* las texturas nacen y mueren difuminadas, nunca con borde */
-.tex{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;pointer-events:none;
-  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 30%,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 30%,#000 70%,transparent 100%);will-change:transform}
+.tex{position:absolute;inset:-20% 0;z-index:0;background-size:cover;background-position:center;pointer-events:none;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,transparent 16%,#000 40%,#000 60%,transparent 84%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,transparent 16%,#000 40%,#000 60%,transparent 84%,transparent 100%);will-change:transform}
 
 .light h2,.light .h2{color:var(--plum-2)}
 h2,.h2{font-family:var(--display);font-weight:500;font-size:clamp(40px,6vw + 14px,78px);line-height:1.08;letter-spacing:-.01em;margin:20px 0 26px}
