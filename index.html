@@ -167,9 +167,20 @@ footer{background:var(--night)}
 .go .fade{opacity:1;transform:none;filter:none}
 .go .t1{transition-delay:.4s}.go .t2{transition-delay:2.3s}.go .t3{transition-delay:2.7s}.go .t4{transition-delay:3.3s}
 .scroll-cue{position:absolute;bottom:clamp(26px,5vh,46px);left:50%;transform:translateX(-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:10px;color:#d8cdea}
-.scroll-cue b{display:block;width:22px;height:36px;border:1.5px solid currentColor;border-radius:12px;position:relative}
-.scroll-cue b::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:currentColor;animation:wheel 1.8s ease-in-out infinite}
+.scroll-cue b{display:block;width:clamp(26px,3vw,32px);height:clamp(42px,5vw,52px);border-radius:16px;position:relative;padding:2px;
+  background:linear-gradient(160deg,#b79bd0,#7d4f86,#2b4a9a,#5d7cc9,#b79bd0);background-size:300% 300%;animation:cueGrad 5s ease-in-out infinite;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;filter:drop-shadow(0 0 8px rgba(125,79,134,.6))}
+.scroll-cue{width:clamp(26px,3vw,32px);height:clamp(42px,5vw,52px);left:0!important;right:0;margin:0 auto}
+.scroll-cue::after{content:"";position:absolute;left:50%;top:22%;width:4px;height:10px;margin-left:-2px;border-radius:3px;background:linear-gradient(#b79bd0,#2b4a9a);animation:wheel 1.8s ease-in-out infinite}
+@keyframes cueGrad{50%{background-position:100% 100%}}
 @keyframes wheel{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+
+/* halo detrás de los textos sobre las tintas */
+.light .sec-in p:not(.caps),.light .sec-in h2,.light .sec-in .caps,.light .cal-side .when,.light .cal-side .city{position:relative;isolation:isolate}
+.light .sec-in p:not(.caps)::before,.light .sec-in h2::before,.light .sec-in .caps::before,.light .cal-side .when::before,.light .cal-side .city::before{
+  content:"";position:absolute;inset:-14px -22px;z-index:-1;border-radius:50%;pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(255,250,255,.92) 0%,rgba(250,240,252,.75) 40%,rgba(245,232,250,.35) 65%,rgba(245,232,250,0) 78%);filter:blur(6px)}
+.light .sec-in p:not(.caps){text-shadow:0 0 12px rgba(255,255,255,.9)}
 
 /* ---------- 1 · nos casamos (óvalo) ---------- */
 .s-love{background:var(--light-1)}
@@ -290,28 +301,47 @@ footer .when{position:relative;z-index:2;margin-top:16px;color:#d8cdea}
 footer .credit{position:relative;z-index:2;margin-top:44px;font-family:var(--sans);font-size:15px;font-weight:500;color:#cbbfe0}
 footer .credit a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
 
-/* ---------- disco de vinil ---------- */
-.vinyl{position:fixed;right:clamp(14px,2.5vw,28px);bottom:clamp(14px,2.5vw,28px);z-index:50;width:clamp(62px,7vw,78px);aspect-ratio:1;border:0;padding:0;background:transparent;cursor:pointer;opacity:0;transform:scale(.5) rotate(-90deg);pointer-events:none;transition:opacity .6s var(--ease),transform .8s var(--ease)}
-.vinyl.show{opacity:1;transform:none;pointer-events:auto}
-.vinyl::before{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid #b79bd0;opacity:.45;animation:vpulse 3s ease-in-out infinite}
-.vinyl.playing::before{animation-duration:1.5s}
-@keyframes vpulse{0%,100%{transform:scale(1);opacity:.45}50%{transform:scale(1.15);opacity:.05}}
-.disc{position:absolute;inset:0;border-radius:50%;box-shadow:0 10px 26px rgba(0,0,0,.45);
+/* ---------- disco de vinil (mismo de invitaciones recientes) ---------- */
+.vinyl-btn{position:fixed;bottom:20px;right:20px;z-index:998;width:72px;height:72px;border-radius:50%;padding:0;border:none;cursor:pointer;background:transparent;opacity:0;transform:scale(.6);pointer-events:none;transition:transform .35s cubic-bezier(.2,.7,.2,1);box-shadow:0 4px 18px rgba(0,0,0,.38),0 0 0 1px rgba(126,135,146,.18);}
+.vinyl-btn.is-ready{opacity:1;transform:scale(1);pointer-events:auto}
+.vinyl-btn:hover{transform:scale(1.1)}
+.vinyl-spin{width:100%;height:100%;border-radius:50%;position:relative;transition:none}
+.vinyl-btn.is-playing .vinyl-spin{animation:vinylSpin 1.8s linear infinite}
+@keyframes vinylSpin{to{transform:rotate(360deg)}}
+.vinyl-disc{width:100%;height:100%;border-radius:50%;overflow:hidden;position:relative;
   background:
-    radial-gradient(circle,#1c1426 0 5%,transparent 5.5%),
-    radial-gradient(circle,#d8c6ea 0 6.5%,transparent 7%),
-    radial-gradient(circle at 40% 35%,#a174ad 0%,#5e3a63 24%,#3a2240 31%,transparent 31.5%),
-    repeating-radial-gradient(circle,#15121d 0 1.6%,#231c2e 1.9% 2.4%,#15121d 2.7% 3.2%);}
-.disc::after{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 20deg,transparent 0 12%,rgba(255,255,255,.16) 16%,transparent 22% 58%,rgba(255,255,255,.1) 62%,transparent 68%)}
-.disc em{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-style:italic;font-size:clamp(9px,1vw,11px);color:#efe6f6;transform:translateY(-26%)}
-.vinyl.playing .disc{animation:spin 2.4s linear infinite}
-.arm{position:absolute;right:-6px;top:-10px;width:44%;height:60%;pointer-events:none;transform-origin:85% 10%;transform:rotate(-28deg);transition:transform .8s var(--ease)}
-.vinyl.playing .arm{transform:rotate(2deg)}
-.arm::before{content:"";position:absolute;right:12%;top:4%;width:3px;height:92%;background:linear-gradient(#e3e6ee,#9aa0ad);border-radius:2px;transform:rotate(18deg);transform-origin:top}
-.arm::after{content:"";position:absolute;right:4%;top:0;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#9aa0ad)}
-.vinyl-ico{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;opacity:0;transition:opacity .3s}
-.vinyl:not(.playing) .vinyl-ico{opacity:1}
-.vinyl-ico svg{width:30%;height:30%;filter:drop-shadow(0 1px 3px rgba(0,0,0,.6));margin-left:6%}
+    radial-gradient(circle,#1a1a1a 4%,transparent 4.5%),
+    radial-gradient(circle,#B8C0C9 0%,#7E8792 17%,#5F6873 19%,transparent 19.5%),
+    repeating-radial-gradient(circle,transparent 20%,rgba(255,255,255,.055) 20.8%,transparent 21.5%,transparent 24%,rgba(255,255,255,.04) 24.8%,transparent 25.5%,transparent 28%,rgba(255,255,255,.055) 28.8%,transparent 29.5%,transparent 32%,rgba(255,255,255,.04) 32.8%,transparent 33.5%,transparent 36%,rgba(255,255,255,.055) 36.8%,transparent 37.5%,transparent 40%,rgba(255,255,255,.04) 40.8%,transparent 41.5%,transparent 44%,rgba(255,255,255,.055) 44.8%,transparent 45.5%,transparent 48%,rgba(255,255,255,.04) 48.8%,transparent 49.5%),
+    radial-gradient(circle,#1a1a1a 0%,#111111 60%,#1a1a1a 100%);
+  box-shadow:inset 0 0 8px rgba(0,0,0,.4);
+}
+.vinyl-sheen{position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.09) 42%,rgba(255,255,255,.15) 48%,rgba(255,255,255,.09) 54%,transparent 66%);pointer-events:none;}
+.vinyl-label-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--display);font-size:11px;color:#B8C0C9;text-align:center;line-height:1.1;opacity:.85;pointer-events:none;width:26px;}
+.vinyl-label-text small{font-family:var(--sans);font-size:5px;letter-spacing:.15em;display:block;margin-top:1px;opacity:.6}
+.vinyl-hole{position:absolute;top:50%;left:50%;width:6px;height:6px;transform:translate(-50%,-50%);border-radius:50%;background:#1a1a1a;box-shadow:0 0 0 1.5px rgba(126,135,146,.5);}
+.vinyl-icons{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:18px;height:18px;pointer-events:none;z-index:2;}
+.vinyl-icons svg{width:100%;height:100%;display:block}
+.vinyl-icon-pause{display:none}
+.vinyl-btn.is-playing .vinyl-icon-play{display:none}
+.vinyl-btn.is-playing .vinyl-icon-pause{display:block}
+.vinyl-btn::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid #b79bd0;opacity:.3;animation:vinylPulse 3s ease-in-out infinite;}
+.vinyl-btn.is-playing::after{animation-duration:1.6s}
+@keyframes vinylPulse{0%,100%{transform:scale(1);opacity:.3}50%{transform:scale(1.12);opacity:.05}}
+.vinyl-tonearm{position:absolute;top:-4px;right:-2px;width:24px;height:34px;transform-origin:top right;transform:rotate(-28deg);transition:transform .6s cubic-bezier(.2,.7,.2,1);pointer-events:none;z-index:1;}
+.vinyl-btn.is-playing .vinyl-tonearm{transform:rotate(-12deg)}
+.vinyl-tonearm-line{position:absolute;top:2px;right:4px;width:2px;height:28px;background:linear-gradient(to bottom,#5F6873,#7E8792 40%,#5F6873);border-radius:1px;transform:rotate(-5deg);transform-origin:top center;}
+.vinyl-tonearm-head{position:absolute;bottom:0;right:2px;width:5px;height:6px;background:#7E8792;border-radius:0 0 2px 2px;}
+.vinyl-tonearm-pivot{position:absolute;top:0;right:2px;width:7px;height:7px;background:radial-gradient(circle,#B8C0C9,#7E8792);border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,.3);}
+.vinyl-btn{box-shadow:0 6px 20px rgba(27,39,86,.4),0 0 0 1px rgba(183,155,208,.4)!important}
+.vinyl-disc{background:repeating-radial-gradient(circle at 50% 50%,#111827 0 1.5px,#1b2333 1.5px 3px)!important}
+.vinyl-disc::after{content:'';position:absolute;top:50%;left:50%;width:42%;height:42%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 35% 30%,#a174ad 0%,#5e3a63 55%,#2b4a9a 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.vinyl-label-text{z-index:1;font-family:var(--display)!important;font-style:italic;font-size:13px!important;color:#EEF1F4!important;opacity:1!important}
+.vinyl-label-text small{font-size:6px!important}
+.vinyl-hole{z-index:2}
+.vinyl-icons{z-index:3;width:16px;height:16px;opacity:.0;transition:opacity .3s}
+.vinyl-btn:not(.is-playing) .vinyl-icons{opacity:1}
+.vinyl-btn{bottom:max(18px,env(safe-area-inset-bottom));right:max(16px,env(safe-area-inset-right))}
 
 /* ---------- responsivo ---------- */
 @media (min-width:960px){
@@ -511,10 +541,13 @@ footer .credit a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(25
 </footer>
 
 <audio id="music" src="music.mp3" loop preload="auto" playsinline></audio>
-<button class="vinyl" id="vinyl" type="button" aria-label="Pausar música">
-  <span class="disc"><em>M&amp;S</em></span>
-  <span class="arm" aria-hidden="true"></span>
-  <span class="vinyl-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8z"/></svg></span>
+<button class="vinyl-btn" id="vinyl" type="button" aria-label="Pausar música">
+  <div class="vinyl-tonearm"><div class="vinyl-tonearm-pivot"></div><div class="vinyl-tonearm-line"></div><div class="vinyl-tonearm-head"></div></div>
+  <div class="vinyl-spin"><div class="vinyl-disc"><div class="vinyl-sheen"></div><div class="vinyl-label-text">M&amp;S<small>2026</small></div><div class="vinyl-hole"></div></div></div>
+  <div class="vinyl-icons">
+    <svg class="vinyl-icon-play" viewBox="0 0 24 24" fill="#EEF1F4" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="vinyl-icon-pause" viewBox="0 0 24 24" fill="#EEF1F4" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+  </div>
 </button>
 
 <script>
@@ -536,8 +569,8 @@ footer .credit a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(25
 
   /* sobre + música */
   var sobre = document.getElementById('sobre'), music = document.getElementById('music'), vinyl = document.getElementById('vinyl'), opened = false;
-  music.addEventListener('play', function(){ vinyl.classList.add('playing'); vinyl.setAttribute('aria-label','Pausar música'); });
-  music.addEventListener('pause', function(){ vinyl.classList.remove('playing'); vinyl.setAttribute('aria-label','Reproducir música'); });
+  music.addEventListener('play', function(){ vinyl.classList.add('is-playing'); vinyl.setAttribute('aria-label','Pausar música'); });
+  music.addEventListener('pause', function(){ vinyl.classList.remove('is-playing'); vinyl.setAttribute('aria-label','Reproducir música'); });
   function abrir(){
     if (opened) return; opened = true;
     try { music.volume = .6; var p = music.play(); if (p && p.catch) p.catch(function(){}); } catch(e){}
@@ -549,7 +582,7 @@ footer .credit a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(25
       document.body.classList.remove('locked');
       document.getElementById('hero').classList.add('go');
       setTimeout(function(){ document.querySelectorAll('[data-split]').forEach(function(el){ el.textContent = el.dataset.full; }); }, (delay + 1.6) * 1000);
-      vinyl.classList.add('show');
+      vinyl.classList.add('is-ready');
     }, dur);
     setTimeout(function(){ sobre.style.display = 'none'; }, dur + 1300);
   }
