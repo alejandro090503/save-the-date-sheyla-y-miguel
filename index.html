@@ -264,7 +264,7 @@ footer{background:var(--night)}
 
 
 /* ---------- lluvia de sobres ---------- */
-.rain{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;
+.rain{position:absolute;inset:0;z-index:4;pointer-events:none;overflow:hidden;
   -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 18%,#000 82%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 18%,#000 82%,transparent 100%)}
 .drop{position:absolute;top:-14%;left:var(--x);width:var(--w);animation:fall var(--t) linear infinite;animation-delay:var(--dl);perspective:500px}
 .drop .sway{animation:sway calc(var(--t) / 3) ease-in-out infinite alternate;animation-delay:var(--dl)}
@@ -610,9 +610,9 @@ footer .credit a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(25
   var tints = [['#ffffff','#e9dff2','#7d4f86'],['#f3f5fb','#d7e0f4','#2b4a9a'],['#faf6fc','#e4d6ee','#5e3a63'],['#ffffff','#dfe6f6','#5d7cc9']];
   var ND = innerWidth < 600 ? 13 : 22;
   for (var k = 0; k < ND; k++){
-    var c = tints[k % tints.length], w = 26 + Math.random() * (innerWidth < 600 ? 26 : 38);
+    var c = tints[k % tints.length], w = 34 + Math.random() * (innerWidth < 600 ? 30 : 46);
     var d = document.createElement('div'); d.className = 'drop';
-    d.style.cssText = '--x:' + (Math.random() * 96).toFixed(1) + '%;--w:' + w.toFixed(0) + 'px;--t:' + (11 + Math.random() * 10).toFixed(1) + 's;--dl:-' + (Math.random() * 20).toFixed(1) + 's;opacity:' + (.55 + Math.random() * .45).toFixed(2);
+    d.style.cssText = '--x:' + (Math.random() * 96).toFixed(1) + '%;--w:' + w.toFixed(0) + 'px;--t:' + (11 + Math.random() * 10).toFixed(1) + 's;--dl:-' + (Math.random() * 20).toFixed(1) + 's;opacity:' + (.75 + Math.random() * .25).toFixed(2);
     d.innerHTML = '<div class="sway"><div class="flip"><svg viewBox="0 0 58 40"><rect x="1" y="1" width="56" height="38" rx="2" fill="' + c[0] + '" stroke="' + c[1] + '"/><path d="M1 3l28 20L57 3" fill="' + c[1] + '" stroke="' + c[1] + '"/><circle cx="29" cy="22" r="4.5" fill="' + c[2] + '"/></svg></div></div>';
     rain.appendChild(d);
   }
